@@ -91,7 +91,3 @@ class Notify:
         }))
 
         return r.status_code == 200
-
-if __name__ == '__main__':
-    notifications = Notify('fucknigs')
-    print(notifications.send('test notif', title='test title'))
