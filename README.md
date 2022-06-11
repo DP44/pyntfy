@@ -27,10 +27,9 @@ timed_notif.send()
 #### Actions
 ```py
 import pyntfy
-from pyntfy import actions
 
 notif = pyntfy.Notification('test_actions', 'Hello, world!')
-notif.add_action(actions.ViewAction('Label', 'https://www.example.com/'))
+notif.add_action(pyntfy.actions.ViewAction('Label', 'https://www.example.com/'))
 notif.send()
 ```
 
