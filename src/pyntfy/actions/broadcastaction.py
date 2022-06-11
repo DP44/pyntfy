@@ -12,21 +12,33 @@ class BroadcastAction(action.Action):
         Broadcast action implementation. (https://ntfy.sh/docs/publish/#send-android-broadcast)
 
         Arguments:
-            label -- Label of the action button in the notification
+            label -- Label of the action button in the notification.
 
         Keyword Arguments:
-            intent -- Android intent name (default: {'io.heckel.ntfy.USER_ACTION'})
-            extras -- Android intent extras (default: {[]})
-            clear -- Clear notification after action button is tapped (default: {False})
+            intent -- Android intent name. (default: {'io.heckel.ntfy.USER_ACTION'})
+            extras -- Android intent extras. (default: {[]})
+            clear -- Clear notification after action button is tapped. (default: {False})
         """
         super().__init__('broadcast', label, clear)
         self.intent = intent
         self.extras = extras
 
     def get_short_header(self) -> str:
-        return ''
+        """
+        Constructs a string representation of the action in the short header format.
+
+        Returns:
+            The constructed string.
+        """
+        raise NotImplementedError()
 
     def __str__(self) -> str:
+        """
+        Constructs a string representation of the action.
+
+        Returns:
+            The constructed string.
+        """
         # TODO: Extras.
         return f'action={self.action}, label="{self.label}", intent={self.intent}, ' + \
                f'clear={str(self.clear).lower()}'

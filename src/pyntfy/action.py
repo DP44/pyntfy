@@ -7,9 +7,9 @@ class Action:
         An abstract class representing an action.
 
         Arguments:
-            action -- Action type
-            label -- Label of the action button in the notification
-            clear -- Clear notification after action button is tapped
+            action -- Action type.
+            label -- Label of the action button in the notification.
+            clear -- Clear notification after action button is tapped.
         """
         self.action = action
         self.label = label

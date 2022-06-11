@@ -13,14 +13,26 @@ class ViewAction(action.Action):
             url -- URL to open when the action is tapped.
 
         Keyword Arguments:
-            clear -- Clear notification after action button is tapped (default: {False})
+            clear -- Clear notification after action button is tapped. (default: {False})
         """
         super().__init__('view', label, clear)
         self.url = url
 
     def get_short_header(self) -> str:
-        return ''
+        """
+        Constructs a string representation of the action in the short header format.
+
+        Returns:
+            The constructed string.
+        """
+        raise NotImplementedError()
 
     def __str__(self) -> str:
+        """
+        Constructs a string representation of the action.
+
+        Returns:
+            The constructed string.
+        """
         return f'action={self.action}, label="{self.label}", url={self.url}, ' + \
                f'clear={str(self.clear).lower()}'

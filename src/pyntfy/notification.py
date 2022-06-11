@@ -19,14 +19,14 @@ class Notification:
 
         Keyword Arguments:
             url -- The url to use. This should be set when using a custom server. (default: {'https://ntfy.sh/'})
-            title -- Message title (default: {''})
-            priority -- Message priority (default: {'default'})
-            tags -- Tags and emojis (default: {''})
-            click -- URL to open when the notification is clicked (default: {''})
-            attach -- URL to send as an attachment (default: {''})
-            delay -- Timestamp or duration for delayed delivery (default: {''})
-            cache -- If the notification should be stored server-side or not (default: {True})
-            firebase -- If the notification should be sent to firebase or not (default: {True})
+            title -- Message title. (default: {''})
+            priority -- Message priority. (default: {'default'})
+            tags -- Tags and emojis. (default: {''})
+            click -- URL to open when the notification is clicked. (default: {''})
+            attach -- URL to send as an attachment. (default: {''})
+            delay -- Timestamp or duration for delayed delivery. (default: {''})
+            cache -- If the notification should be stored server-side or not. (default: {True})
+            firebase -- If the notification should be sent to firebase or not. (default: {True})
         """
         self.topic = topic
         self.message = message
@@ -47,7 +47,7 @@ class Notification:
         Adds an action to the notification.
 
         Arguments:
-            action -- _description_
+            action -- The action to add.
         """
         # Only 3 user actions are accepted.
         if len(self.actions) >= 3:
