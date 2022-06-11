@@ -24,7 +24,7 @@ setuptools.setup(
         'License :: OSI Approved :: MIT License',
     ],
 
-    keywords='notification notify ntfy toast android',
+    keywords='notification notify ntfy toast',
 
     install_requires=['requests'],
 
