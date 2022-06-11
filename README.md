@@ -11,21 +11,32 @@ $ pip install pyntfy
 ```
 
 ------------------------------------------------------------------  
-### Examples
+### Usage
 ```py
-from pyntfy import notify
-
-notifier = notify.Notify('sample_topic')
+import pyntfy
 
 # Send a sample notification.
-notifier.send('Hello, world!', title='Notification Title')
+notif = pyntfy.Notification('test_notification', 'Hello, world!', title='Notification Title')
+notif.send()
 
-# Wait one minute before triggering a notification.
-notifier.trigger(delay='1m')
+# Send a timed notification.
+timed_notif = pyntfy.Notification('test_notification', 'Hello, world!', title='Notification Title', delay='1m')
+timed_notif.send()
+```
+
+#### Actions
+```py
+import pyntfy
+from pyntfy import actions
+
+notif = pyntfy.Notification('test_actions', 'Hello, world!')
+notif.add_action(actions.ViewAction('Label', 'https://www.example.com/'))
+notif.send()
 ```
 
 ------------------------------------------------------------------  
+### Planned Features
+- Allow for JSON data as input.
+- Proper tests.
 
-
-
-<!-- TODO: Finish this -->
+<!-- TODO: README -->

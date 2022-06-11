@@ -1,6 +1,7 @@
-# Build the project wheels.
-# NOTE: I specified the -n flag because virtualenv was freaking out preventing me from building.
-py -m build -n
+if (Test-Path -Path dist) {
+    Remove-Item -Path dist -Recurse
+}
 
-# Publish wheels to pypi
-py -m twine upload --repository pypi dist/*
+Write-Host "Building project wheels..." -ForegroundColor Magenta
+# NOTE: The -n flag is here because virtualenv was freaking out preventing me from building.
+py -m build -n

@@ -1,0 +1,1 @@
+from pyntfy.notification import Notification
