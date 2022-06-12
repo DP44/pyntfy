@@ -5,7 +5,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 
 setuptools.setup(
     name='pyntfy',
-    version='0.2.0',
+    version='0.2.1',
     author='DP44',
     
     description='A module for interacting with ntfy.sh notifications.',
