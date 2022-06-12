@@ -42,6 +42,12 @@ class HTTPAction(action.Action):
         Returns:
             The constructed string.
         """
-        # TODO: Headers
-        return f'action={self.action}, label="{self.label}", url={self.url}, method={self.method}, ' + \
-               f'body="{self.body}", clear={str(self.clear).lower()}'
+        str_rep = f'action={self.action}, label="{self.label}", url={self.url}, method={self.method}, '
+
+        # Add headers to string.
+        for header in self.headers.keys():
+            str_rep += f'headers.{header}="{self.headers[header]}", '
+        
+        str_rep += f'body="{self.body}", clear={str(self.clear).lower()}'
+
+        return str_rep

@@ -39,6 +39,12 @@ class BroadcastAction(action.Action):
         Returns:
             The constructed string.
         """
-        # TODO: Extras.
-        return f'action={self.action}, label="{self.label}", intent={self.intent}, ' + \
-               f'clear={str(self.clear).lower()}'
+        str_rep = f'action={self.action}, label="{self.label}", intent={self.intent}, '
+
+        # Add extras to string.
+        for extra in self.extras.keys():
+            str_rep += f'extras.{extra}={self.extras[extra]}, '
+
+        str_rep += f'clear={str(self.clear).lower()}'
+
+        return str_rep
