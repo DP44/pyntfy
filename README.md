@@ -35,6 +35,7 @@ notif.send()
 
 ------------------------------------------------------------------  
 ### Planned Features
+- Webhook support.
 - Allow for JSON data as input.
 - Proper tests.
 
